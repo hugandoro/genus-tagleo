@@ -7,6 +7,8 @@ if (isset($_GET['id'])) $id = $_GET['id'];
 $data = json_decode(file_get_contents('http://127.0.0.1:8080/genus-tagleo/api-rest-ful/post.php?id=' . $id));
 //$data = json_decode( file_get_contents('https://www.qr.genusgroupsas.com/api-rest-ful/post.php?id='.$id) );
 
+//$data = json_decode( file_get_contents('https://www.imoxweb.com/backend/api-rest-ful/post.php?id='.$id) );
+
 //https://qr.genusgroupsas.com/validacion.php?cod=1
 
 if ($data->landingpage_estado == 0) {
