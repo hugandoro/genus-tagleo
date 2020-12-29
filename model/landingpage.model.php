@@ -6,7 +6,6 @@ class Landingpage
 	
 	// Inicializa variables para campos que conforman la landingpage
 	public $landingpage_id;
-	public $landingpage_identificacion;
 	public $landingpage_razon_social; 
 	public $landingpage_representante_legal;
 	public $landingpage_direccion;
@@ -19,19 +18,7 @@ class Landingpage
 	public $imgFile_logo_350x60; //Imagen Logo_350x60
 	public $tmp_dir_logo_350x60; //Imagen Logo_350x60
 	public $imgSize_logo_350x60; //Imagen Logo_350x60
-	
-
-	public $landingpage_contacto_titulo_largo;
-	public $landingpage_contacto_titulo_corto;
-	public $landingpage_contacto_email;
-	public $landingpage_footer_facebook;
-	public $landingpage_footer_fanpage;
-	public $landingpage_footer_twitter;
-	public $landingpage_footer_instagram;
-	public $landingpage_footer_linkedin;
-	public $landingpage_footer_whatsapp;
-	
-
+		
 	public $landingpage_estado;
 	public $landingpage_dias_demo;
 
@@ -53,7 +40,7 @@ class Landingpage
 			if (strtolower($filtro)!=''){
 				$stm = $this->pdo->prepare("SELECT * FROM landingpage t1 
 				INNER JOIN asesor_landingpage t2 ON (t1.landingpage_id = t2.landingpage_id) 
-				WHERE (t2.asesor_id = '$idAsesor') AND ((t1.landingpage_razon_social LIKE '%$filtro%') OR (t1.landingpage_representante_legal LIKE '%$filtro%')  OR (t1.landingpage_id LIKE '%$filtro%') OR (t1.landingpage_identificacion LIKE '%$filtro%'))");
+				WHERE (t2.asesor_id = '$idAsesor') AND ((t1.landingpage_razon_social LIKE '%$filtro%') OR (t1.landingpage_representante_legal LIKE '%$filtro%')  OR (t1.landingpage_id LIKE '%$filtro%'))");
 			}
 
 			elseif (strtolower($filtro)==''){
@@ -75,7 +62,7 @@ class Landingpage
 			$result = array();
 			$stm = $this->pdo->prepare("SELECT * FROM landingpage t1 
 			INNER JOIN asesor_landingpage t2 ON (t1.landingpage_id = t2.landingpage_id) 
-			WHERE (t2.asesor_id = '$idAsesor') AND (t1.landingpage_identificacion = '$identificacionLandingpage')");
+			WHERE (t2.asesor_id = '$idAsesor')");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -87,12 +74,12 @@ class Landingpage
 
 	// Metodo para obtener el ID de una landingpage especificada (N° Identficiacion Paciente - Asesor propietario)
 	// Solo puede existir una landingpage registrada con un numero de identificacion por asesor - Pero pueden existir varias landingpages con la misma identificacion con diferente asesor
-	public function obtenerID($identificacionLandingpage,$idAsesor){
+	public function obtenerID($idAsesor){
 		try{
 			$result = array();
 			$stm = $this->pdo->prepare("SELECT * FROM landingpage t1 
 			INNER JOIN asesor_landingpage t2 ON (t1.landingpage_id = t2.landingpage_id) 
-			WHERE (t2.asesor_id = '$idAsesor') AND (t1.landingpage_identificacion = '$identificacionLandingpage')");
+			WHERE (t2.asesor_id = '$idAsesor')");
 			$stm->execute();
 
 			return $stm->fetch(PDO::FETCH_OBJ); //Retorna el objeto HISTORIA encontrada con todas sus propiemailes 
@@ -145,11 +132,8 @@ class Landingpage
 	// Metodo para actualizar un registro
 	public function Actualizar($data){
 		try{
-			$data->landingpage_identificacion == "" ? $data->landingpage_identificacion = "0" : $data->landingpage_identificacion;
-			$data->landingpage_footer_whatsapp == "" ? $data->landingpage_footer_whatsapp = "0" : $data->landingpage_footer_whatsapp;
 
 			$sql = "UPDATE landingpage SET 
-						landingpage_identificacion					= ?,
 						landingpage_razon_social					= ?,
 						landingpage_representante_legal				= ?,
 						landingpage_direccion						= ?,
@@ -158,16 +142,6 @@ class Landingpage
 						landingpage_telefono_fijo					= ?,
 						landingpage_telefono_celular				= ?,
 						landingpage_email							= ?,
-
-						landingpage_contacto_titulo_largo			= ?,
-						landingpage_contacto_titulo_corto			= ?,
-						landingpage_contacto_email					= ?,
-						landingpage_footer_facebook					= ?,
-						landingpage_footer_fanpage					= ?,
-						landingpage_footer_twitter					= ?,
-						landingpage_footer_instagram				= ?,
-						landingpage_footer_linkedin					= ?,
-						landingpage_footer_whatsapp					= ?,
 
 						landingpage_estado							= ?,
 						landingpage_dias_demo						= ?
@@ -178,7 +152,6 @@ class Landingpage
 			     ->execute(
 				    array(
 						//TAB 1 - DATOS GENERALES
-						$data->landingpage_identificacion,
 						$data->landingpage_razon_social, 
 						$data->landingpage_representante_legal,
 						$data->landingpage_direccion,
@@ -187,16 +160,6 @@ class Landingpage
 						$data->landingpage_telefono_fijo,
 						$data->landingpage_telefono_celular,
 						$data->landingpage_email,
-						//TAB 7 - FORMULARIO DE CONTACTO
-						$data->landingpage_contacto_titulo_largo,
-						$data->landingpage_contacto_titulo_corto,
-						$data->landingpage_contacto_email,
-						$data->landingpage_footer_facebook,
-						$data->landingpage_footer_fanpage,
-						$data->landingpage_footer_twitter,
-						$data->landingpage_footer_instagram,
-						$data->landingpage_footer_linkedin,
-						$data->landingpage_footer_whatsapp,
 						//TAB 10 - ADMINISTRACION
 						$data->landingpage_estado,
 						$data->landingpage_dias_demo,
@@ -226,22 +189,20 @@ class Landingpage
 	// Metodo para crear un nuevo registro solo DATOS GENERALES Y PRECARGADOS POR DEFECTO
 	public function registrarNuevo(Landingpage $data){
 		try{
-		$data->landingpage_identificacion == "" ? $data->landingpage_identificacion = "0" : $data->landingpage_identificacion;
 
 		if ($data->landingpage_categoria == "cat00") //00 - GENERAL
 		{
 			$demoLogo = "demo_cat00_logo_350x60.png";
 		}
 
-		$sql = "INSERT INTO landingpage (landingpage_identificacion,landingpage_razon_social,landingpage_representante_legal,landingpage_direccion,landingpage_ciudad,landingpage_pais,
+		$sql = "INSERT INTO landingpage (landingpage_razon_social,landingpage_representante_legal,landingpage_direccion,landingpage_ciudad,landingpage_pais,
 				landingpage_telefono_fijo,landingpage_telefono_celular,landingpage_email,landingpage_categoria,landingpage_logo_350x60_img)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 			->execute(
 			array(
 				//TAB 1 - DATOS GENERALES
-				$data->landingpage_identificacion,
 				$data->landingpage_razon_social, 
 				$data->landingpage_representante_legal,
 				$data->landingpage_direccion,

@@ -5,7 +5,7 @@ if (isset($_GET['id'])) $id = $_GET['id'];
 
 //Descomentar para pruebas o para produccion
 $data = json_decode(file_get_contents('http://127.0.0.1:8080/genus-tagleo/api-rest-ful/post.php?id=' . $id));
-//$data = json_decode( file_get_contents('https://www.imoxweb.com/backend/api-rest-ful/post.php?id='.$id) );
+//$data = json_decode( file_get_contents('https://www.qr.genusgroupsas.com/api-rest-ful/post.php?id='.$id) );
 
 //https://qr.genusgroupsas.com/validacion.php?cod=1
 
@@ -53,15 +53,20 @@ if ($data->landingpage_estado == 0) {
           <li class="nav-item">
             <a class="nav-link" href="#">TAGLEO | </a>
           </li>
+
+          <!--
           <li class="nav-item">
             <a class="nav-link" href="#">Adquirir una placa | </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Activar una Placa | </a>
           </li>
+          -->
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Administrar una Placa ya activada</a>
+            <a class="nav-link" href="https://qr.genusgroupsas.com/">Administrar esta placa</a>
           </li>
+
         </ul>
       </div>
     </div>
@@ -81,7 +86,7 @@ if ($data->landingpage_estado == 0) {
 
           <br>
           <hr>
-          <img src="<?php echo $data->landingpage_ruta_img;?><?php echo $data->landingpage_logo_350x60_img;?>" style="border-radius: 15px 15px 15px 15px;" alt="" height="260px">
+          <img src="<?php echo $data->landingpage_ruta_img; ?><?php echo $data->landingpage_logo_350x60_img; ?>" style="border-radius: 15px 15px 15px 15px;" alt="" height="260px">
           <hr>
 
         </center>
@@ -89,31 +94,37 @@ if ($data->landingpage_estado == 0) {
 
       <div class="col-md-12 mb-12">
         <center>
-          <label for="identificacion"><h3>Hola me llamo ... </h3><h1><b><?php echo $data->landingpage_razon_social; ?></b></h1></label>
+          <label for="identificacion">
+            <h3>Hola me llamo ... </h3>
+            <h1><b><?php echo $data->landingpage_razon_social; ?></b></h1>
+          </label>
         </center>
       </div>
 
-      <div class="col-md-12 mb-12"><hr></div>
+      <div class="col-md-12 mb-12">
+        <hr>
+      </div>
 
-      <div class="col-md-4 mb-4">
+
+      <!--<div class="col-md-4 mb-4">
         <center>
           <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Ficha de nacimiento</button>
         </center>
-      </div>
+      </div>-->
 
-      <div class="col-md-4 mb-4">
+      <!--<div class="col-md-4 mb-4">
         <center>
           <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Habitos alimenticios</button>
         </center>
-      </div>
+      </div>-->
 
-      <div class="col-md-4 mb-4">
+      <!--<div class="col-md-4 mb-4">
         <center>
           <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Tratamiento medico especiales</button>
         </center>
-      </div>
+      </div>-->
 
-      <div class="col-md-12 mb-12"><hr></div>
+      <!--<div class="col-md-12 mb-12"><hr></div>-->
 
     </div>
     <!-- /.row -->
@@ -153,24 +164,15 @@ if ($data->landingpage_estado == 0) {
             </div>
           </div>
           <div id="success"></div>-->
-          <!-- For success/fail messages -->
-          <!--<button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Enviar</button><br><br>
+    <!-- For success/fail messages -->
+    <!--<button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Enviar</button><br><br>
         </form>
-      </div>
-
-      <div class="col-lg-12 mb-6">
-        <?php if ($data->landingpage_footer_facebook != "") { ?><a target="_blank" href="https://www.facebook.com/<?php echo $data->landingpage_footer_facebook; ?>"><img src="assets/img/facebook60x60.png" height="40px" alt="Facebook"></a><?php } ?>
-        <?php if ($data->landingpage_footer_instagram != "") { ?><a target="_blank" href="https://www.instagram.com/<?php echo $data->landingpage_footer_instagram; ?>"><img src="assets/img/instagram60x60.png" height="40px" alt="Instagram"></a><?php } ?>
-        <?php if ($data->landingpage_footer_twitter != "") { ?><a target="_blank" href="https://www.twitter.com/<?php echo $data->landingpage_footer_twitter; ?>"><img src="assets/img/twitter60x60.png" height="40px" alt="Twitter"></a><?php } ?>
-        <?php if ($data->landingpage_footer_linkedin != "") { ?><a target="_blank" href="https://www.linkedin.com/in/<?php echo $data->landingpage_footer_linkedin; ?>"><img src="assets/img/linkedin60x60.png" height="40px" alt="LinkedIn"></a><?php } ?>
-        <?php if (($data->landingpage_footer_whatsapp != "") && ($data->landingpage_footer_whatsapp != "0")) { ?><a target="_blank" href="https://api.whatsapp.com/send?phone=57<?php echo $data->landingpage_footer_whatsapp; ?>&text=Mensaje%20via%20TAGLEO%20-%20Hola..."><img src="assets/img/whatsapp60x60.png" height="40px" alt="Whatsapp"></a><?php } ?>
-        <?php if ($data->landingpage_footer_fanpage != "") { ?><a target="_blank" href="https://www.facebook.com/<?php echo $data->landingpage_footer_fanpage; ?>"><img src="assets/img/fanpage60x120.png" height="40px" alt="Facebook FanPage"></a><?php } ?>
       </div>
     </div>-->
     <!-- /.row -->
 
 
-    <!-- MAPA -->
+    <!-- MAPA
     <br>
     <h4 align="center" id="bloque_contactanos">Mi Hogar</h4>
     <div class="row">
@@ -179,16 +181,50 @@ if ($data->landingpage_estado == 0) {
       </div>
     </div>
 
-    <div class="col-md-12 mb-12"><hr></div>
+    <div class="col-md-12 mb-12"><hr></div>-->
 
     <!-- CONTACTA CON MI DUEÑO -->
-    <br>
-    <h4 align="center" id="bloque_contactanos">Si me ves perdid@ por favor contacta con mi dueño...</h4>
+    <h4 align="center" id="bloque_contactanos">Mi cuidador...</h4>
+    <h3 align="center" id="bloque_contactanos"><b><?php echo $data->landingpage_representante_legal; ?></b></h3><br>
+
     <div class="row">
-      <div class="col-lg-12 mb-6" align="center">
-        <?php if (($data->landingpage_footer_whatsapp != "") && ($data->landingpage_footer_whatsapp != "0")) { ?><a target="_blank" href="https://api.whatsapp.com/send?phone=57<?php echo $data->landingpage_footer_whatsapp; ?>&text=Mensaje%20via%20TAGLEO%20-%20Hola..."><img src="assets/img/whatsapp_logo_color.png" height="100px" alt="Whatsapp"></a><?php } ?>
+
+      <div class="col-lg-12 mb-12" align="center">
+
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/img/direccion.png" height="60px" alt="Card image cap">
+              <h5 class="card-title">Mi dirección</h5>
+              <p class="card-text">
+                <?php echo $data->landingpage_direccion; ?> - <?php echo $data->landingpage_ciudad; ?> - <?php echo $data->landingpage_pais; ?>
+              </p>
+              <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <img src="assets/img/telefonos.png" height="60px" alt="Card image cap">
+              <h5 class="card-title">Telefonos de emergencia</h5>
+              <p class="card-text">
+                <?php echo $data->landingpage_telefono_fijo; ?> - <?php echo $data->landingpage_telefono_celular; ?>
+              </p>
+              <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-lg-12 mb-12" align="center">
+        <br><a target="_blank" href="https://api.whatsapp.com/send?phone=57<?php echo $data->landingpage_telefono_celular; ?>&text=Mensaje%20via%20TAGLEO%20-%20Hola..."><img src="assets/img/whatsapp_logo_color.png" height="80px" alt="Whatsapp"></a>
+      </div>
+    </div>
+
+
+
 
 
   </div>

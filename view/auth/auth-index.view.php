@@ -12,9 +12,9 @@
             </div>
             <div class="panel-body">
                 <form method="post" action="?c=Auth&a=Autenticar" role="login">
-                    <input type="email" name="usuario" placeholder="Email" required class="form-control" value="" autocomplete="off" />
+                    <input type="text" name="usuario" placeholder="Digital el ID placa" required class="form-control" value="" autocomplete="off" />
                     <br>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required autocomplete="off" />
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Digita el codigo unico de la placa..." required autocomplete="off" />
                     <hr />
                     <button type="submit" name="go" class="btn btn-lg btn-warning btn-block">Ingresar</button>
                 </form>
