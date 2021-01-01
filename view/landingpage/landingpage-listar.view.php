@@ -1,6 +1,6 @@
 <!-- Vista para pantalla resultados de la busqueda de landingpages clinicas con aplicacion de filtros -->
 <h6 class="page-header">
-    TAGLEO - Placas vinculadas para administrar
+    TAGLEA - Placas vinculadas para administrar
 </h6>
 
 <table class="table table-striped">
@@ -9,7 +9,7 @@
             <th>Codigo QR</th>
             <th>Nombre mascota</th>
             <th class="visible-md visible-lg">Nombre dueñ@</th>
-            <th class="visible-md visible-lg">Direccion</th>
+            <th class="visible-md visible-lg">Dirección</th>
             <th class="visible-md visible-lg">Ciudad</th>
             <th style="width:20px;"></th>
             <th style="width:20px;"></th>

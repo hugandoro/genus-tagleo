@@ -1,6 +1,6 @@
 <!-- Vista para CRUD a la base de datos Nuevo registro o modo edicion -->
 <h6 class="page-header">
-    TAGLEO - Crear/Editar placa
+    TAGLEA - Crear/Editar placa
 </h6>
 
 <ol class="breadcrumb">
@@ -59,7 +59,7 @@
 
                                     <!-- Fila 3 -->
                                     <div class="form-group col-md-6" style="display: block;" title="Direccion comercial">
-                                        <label for="direccion">Direccion</label>
+                                        <label for="direccion">Dirección</label>
                                         <input onblur="Mayuscula(this);" value="<?php echo $landingpageFicha->landingpage_direccion; ?>" name="direccion" id="direccion" type="text" class="form-control" placeholder="Direccion donde reside la mascota...">
                                     </div>
 

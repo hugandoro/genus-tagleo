@@ -30,13 +30,14 @@ if ($data->landingpage_estado == 0) {
   <meta name="author" content="Genus Group SAS | Arte Grabana">
   <meta name="keywords" content="Codigo QR, seguridad, identificacion">
 
-  <title>TAGLEO - Colombia</title>
+  <title>TAGLEA - Colombia</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CDN - JS - Bootstrap --> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <!-- Custom styles for this template -->
-  <link href="assets/css/modern-business.css" rel="stylesheet">
 
 </head>
 
@@ -46,27 +47,19 @@ if ($data->landingpage_estado == 0) {
   <!-- 100%—FF 95%—F2 90%—E6 85%—D9 80%—CC 75%—BF 70%—B3 65%—A6 60%—99 55%—8C 50%—80 45%—73 40%—66 35%—59 30%—4D 25%—40 20%—33 15%—26 10%—1A 5%—0D 0%—00 -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background:#000000BF;">
     <div class="container">
-      <a class="navbar-brand" href="#">TAGLEO</a>
+      <a class="navbar-brand" href="#">TAGLEA | Identificación digital para tu mascota</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">TAGLEO | </a>
-          </li>
-
-          <!--
-          <li class="nav-item">
-            <a class="nav-link" href="#">Adquirir una placa | </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Activar una Placa | </a>
-          </li>
-          -->
 
           <li class="nav-item">
-            <a class="nav-link" href="https://qr.genusgroupsas.com/">Administrar esta placa</a>
+            <a class="nav-link" href="https://qr.genusgroupsas.com/">Administrar placa</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://api.whatsapp.com/send?phone=573118284183&text=Mensaje%20TAGLEA%20-%20Hola...">Soporte tecnico y ventas</a>
           </li>
 
         </ul>
@@ -107,86 +100,12 @@ if ($data->landingpage_estado == 0) {
         <hr>
       </div>
 
-
-      <!--<div class="col-md-4 mb-4">
-        <center>
-          <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Ficha de nacimiento</button>
-        </center>
-      </div>-->
-
-      <!--<div class="col-md-4 mb-4">
-        <center>
-          <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Habitos alimenticios</button>
-        </center>
-      </div>-->
-
-      <!--<div class="col-md-4 mb-4">
-        <center>
-          <button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Tratamiento medico especiales</button>
-        </center>
-      </div>-->
-
-      <!--<div class="col-md-12 mb-12"><hr></div>-->
-
     </div>
     <!-- /.row -->
 
-
-
-    <!-- CONTACTANOS -->
-    <!--<br>
-    <h3 align="center" id="bloque_contactanos">Enviar un correo electronico a mi dueño...<br><br></h3>
-    <div class="row">
-      <div class="col-lg-12 mb-6">
-        <form name="sentMessage" id="contactForm" novalidate>
-          <input type="hidden" id="destino" value="<?php echo $data->landingpage_contacto_email; ?>" />
-          <div class="control-group form-group">
-            <div class="controls">
-              <label style="color:#4A4A4A;">Nombre</label>
-              <input type="text" class="form-control" id="name" required data-validation-required-message="Ingrese un nombre valido">
-              <p class="help-block"></p>
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label style="color:#4A4A4A;">N° de Telefono</label>
-              <input type="tel" class="form-control" id="phone" required data-validation-required-message="Ingrese un numero de contacto">
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label style="color:#4A4A4A;">Correo electronico</label>
-              <input type="email" class="form-control" id="email" required data-validation-required-message="Ingrese una direccion de correo valida">
-            </div>
-          </div>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label style="color:#4A4A4A;">Tu mensaje...</label>
-              <textarea rows="3" cols="100" class="form-control" id="message" required data-validation-required-message="Ingrese un mensaje" maxlength="300" style="resize:none"></textarea>
-            </div>
-          </div>
-          <div id="success"></div>-->
-    <!-- For success/fail messages -->
-    <!--<button type="submit" class="btn btn-warning btn-block" id="sendMessageButton">Enviar</button><br><br>
-        </form>
-      </div>
-    </div>-->
-    <!-- /.row -->
-
-
-    <!-- MAPA
-    <br>
-    <h4 align="center" id="bloque_contactanos">Mi Hogar</h4>
-    <div class="row">
-      <div class="col-lg-12 mb-6" align="center">
-        <img src="assets/img/mapa.png" width="100%" alt="Mapa"></a>
-      </div>
-    </div>
-
-    <div class="col-md-12 mb-12"><hr></div>-->
 
     <!-- CONTACTA CON MI DUEÑO -->
-    <h4 align="center" id="bloque_contactanos">Mi cuidador...</h4>
+    <h4 align="center" id="bloque_contactanos">Mi cuidador(a)...</h4>
     <h3 align="center" id="bloque_contactanos"><b><?php echo $data->landingpage_representante_legal; ?></b></h3><br>
 
     <div class="row">
@@ -201,7 +120,6 @@ if ($data->landingpage_estado == 0) {
               <p class="card-text">
                 <?php echo $data->landingpage_direccion; ?> - <?php echo $data->landingpage_ciudad; ?> - <?php echo $data->landingpage_pais; ?>
               </p>
-              <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
             </div>
           </div>
           <div class="card">
@@ -211,7 +129,6 @@ if ($data->landingpage_estado == 0) {
               <p class="card-text">
                 <?php echo $data->landingpage_telefono_fijo; ?> - <?php echo $data->landingpage_telefono_celular; ?>
               </p>
-              <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
             </div>
           </div>
         </div>
@@ -221,13 +138,9 @@ if ($data->landingpage_estado == 0) {
 
     <div class="row">
       <div class="col-lg-12 mb-12" align="center">
-        <br><a target="_blank" href="https://api.whatsapp.com/send?phone=57<?php echo $data->landingpage_telefono_celular; ?>&text=Mensaje%20via%20TAGLEO%20-%20Hola..."><img src="assets/img/whatsapp_logo_color.png" height="80px" alt="Whatsapp"></a>
+        <br><a target="_blank" href="https://api.whatsapp.com/send?phone=57<?php echo $data->landingpage_telefono_celular; ?>&text=Mensaje%20TAGLEA%20-%20Hola..."><img src="assets/img/whatsapp_logo_color.png" height="80px" alt="Whatsapp"></a>
       </div>
     </div>
-
-
-
-
 
   </div>
   <!-- /.container -->
@@ -237,7 +150,9 @@ if ($data->landingpage_estado == 0) {
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-        <p class="m-0 text-center" style="font-size:12px;">TAGLEO - Copyright &copy; - Un producto Genus Group SAS & Arte Grabana</p>
+        <hr>
+        <p class="m-0 text-center" style="font-size:12px;">TAGLEA - Copyright &copy; - Un servicio Genus Group SAS<br>Distribuidores autorizados en Colombia - Arte Grabana - Ecoroji</p>
+        <p class="m-0 text-center" style="font-size:12px;">Soportes y ventas <a class="nav-link" href="https://api.whatsapp.com/send?phone=573118284183&text=Mensaje%20TAGLEA%20-%20Hola...">+57 311 828 4183</a></p>
         <p class="m-0 text-center" style="font-size:12px;"><a href="https://www.genusgroupsas.com">www.genusgroupsas.com</a></p>
       </div>
       <div class="col-lg-4"></div>
@@ -245,15 +160,11 @@ if ($data->landingpage_estado == 0) {
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="assets/jquery/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- JS FILES VALIDAD RUTA DEL CONTACT_ME.JS POR SI NO FUNCIONA AL ENVIAR CORREO-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="./assets/js/jqBootstrapValidation.js"></script>
-  <script src="./assets/js/contact_me.js"></script>
-
+  <!-- CDN - JS - Bootstrap --> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

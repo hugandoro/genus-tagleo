@@ -1,6 +1,6 @@
 <!-- Vista para pantalla buscar una landingpage clinica por filtro -->
 <h6 class="page-header">
-    TAGLEO - Buscar placa activada...
+    TAGLEA - Buscar placa activada...
 </h6>
 
 <div class="well well-sm text-right">

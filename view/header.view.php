@@ -5,7 +5,7 @@
 ?>
 <html lang="es">
 	<head>
-		<title>TAGLEO | 20202</title>
+		<title>TAGLEA | Identificación digital para tu mascota</title>
         
         <meta charset="utf-8" />
 

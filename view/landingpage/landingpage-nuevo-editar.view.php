@@ -1,6 +1,6 @@
 <!-- Vista para CRUD a la base de datos Nuevo registro o modo edicion -->
 <h6 class="page-header">
-    TAGLEO - Crear/Editar placa
+    TAGLEA - Crear/Editar placa
 </h6>
 
 <ol class="breadcrumb">
@@ -18,7 +18,7 @@
                 <!-- Coleccion menu pestañas de TAB -->
                 <ul class="nav nav-tabs">
                     <li class="active"><a id="tabLabel1" href="#tabContent1" data-toggle="tab">Ficha tecnica</a></li>
-                    <li><a id="tabLabel3" href="#tabContent3" data-toggle="tab">Configuracion</a></li>
+                    <li><a id="tabLabel3" href="#tabContent3" data-toggle="tab">Configuración</a></li>
                 </ul>
 
                 <div class="tab-content">
