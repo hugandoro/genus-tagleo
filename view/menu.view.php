@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="?c=Landingpage&token=<?php echo @$_GET['token']; ?>">TAGLEA | Identificación digital para tu mascota</a>
+      <a class="navbar-brand" href="?c=Landingpage&token=<?php echo @$_GET['token']; ?>">TAGLEA | Placa digital</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -47,7 +47,7 @@ if ($data->landingpage_estado == 0) {
   <!-- 100%—FF 95%—F2 90%—E6 85%—D9 80%—CC 75%—BF 70%—B3 65%—A6 60%—99 55%—8C 50%—80 45%—73 40%—66 35%—59 30%—4D 25%—40 20%—33 15%—26 10%—1A 5%—0D 0%—00 -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background:#000000BF;">
     <div class="container">
-      <a class="navbar-brand" href="#">TAGLEA | Identificación digital para tu mascota</a>
+      <a class="navbar-brand" href="#">TAGLEA | Placa digital</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
